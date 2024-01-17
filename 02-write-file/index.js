@@ -2,8 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { stdin } = process;
 const colors = require('../modules/colors');
+const pathToFile = path.join(__dirname, 'text.txt');
 
-fs.open(path.join(__dirname, 'text.txt'), 'w', (err) => {
+fs.open(pathToFile, 'w', (err) => {
   if (err) throw err;
   // console.log('The file text.txt has been created');
 });
@@ -21,7 +22,7 @@ stdin.on('data', (data) => {
     console.log(colors.green, 'Exit has been entered', colors.white);
     process.exit();
   } else {
-    fs.appendFile(path.join(__dirname, 'text.txt'), `${data}`, (err) => {
+    fs.appendFile(pathToFile, `${data}`, (err) => {
       if (err) throw err;
       console.log(colors.cyan, 'The file has been modified', colors.white);
     });
