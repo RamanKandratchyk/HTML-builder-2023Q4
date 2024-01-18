@@ -95,7 +95,7 @@ async function fillHTMLAccordToTemplate(compSrc, dest) {
       }
     }
   } catch (err) {
-    console.error(err);
+    console.error(colors.red, err, colors.white);
   }
 }
 
@@ -127,7 +127,7 @@ async function mergeStyles(src, dest) {
       }
     }
   } catch (err) {
-    console.error(err);
+    console.error(colors.red, err, colors.white);
   }
 }
 
