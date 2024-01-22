@@ -1,9 +1,16 @@
 const fsProm = require('fs/promises');
 const path = require('path');
 const fs = require('fs');
-const colors = require('../modules/colors');
+// const colors = require('../modules/colors');
 const pathToBundle = path.join(__dirname, 'project-dist', 'bundle.css');
 const pathToStyles = path.join(__dirname, 'styles');
+const colors = {
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  cyan: '\x1b[36m',
+  white: '\x1b[37m',
+};
 
 async function deleteFile(src) {
   try {

@@ -1,8 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 const { stdin } = process;
-const colors = require('../modules/colors');
+// const colors = require('../modules/colors');
 const pathToFile = path.join(__dirname, 'text.txt');
+const colors = {
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  cyan: '\x1b[36m',
+  white: '\x1b[37m',
+};
 
 fs.open(pathToFile, 'w', (err) => {
   if (err) throw err;

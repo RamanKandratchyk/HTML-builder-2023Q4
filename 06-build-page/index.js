@@ -1,11 +1,18 @@
 const fsProm = require('fs/promises');
 const path = require('path');
 const fs = require('fs');
-const colors = require('../modules/colors');
+// const colors = require('../modules/colors');
 const pathToProject = path.join(__dirname, 'project-dist');
 const pathToComponents = path.join(__dirname, 'components');
 const pathToStyles = path.join(__dirname, 'styles');
 const pathToTemplate = path.join(__dirname, 'template.html');
+const colors = {
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  cyan: '\x1b[36m',
+  white: '\x1b[37m',
+};
 let templateStr = '';
 
 async function deleteDir(src) {

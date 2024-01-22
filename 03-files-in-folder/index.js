@@ -1,7 +1,14 @@
 const fs = require('fs/promises');
 const path = require('path');
-const colors = require('../modules/colors');
+// const colors = require('../modules/colors');
 const pathToDir = path.join(__dirname, 'secret-folder');
+const colors = {
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  cyan: '\x1b[36m',
+  white: '\x1b[37m',
+};
 
 async function readFilesInfo(pathToDir) {
   try {
