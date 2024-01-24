@@ -17,9 +17,7 @@ async function deleteDir(src) {
     await fsProm.access(src, constants.F_OK);
     // console.log("File found");
     await fsProm.rm(src, { recursive: true });
-  } catch (err) {
-    console.error(colors.red, err, colors.white);
-  }
+  } catch (err) {}
 }
 
 async function copyDir(src, dest) {
