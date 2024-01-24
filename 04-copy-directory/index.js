@@ -17,7 +17,14 @@ async function deleteDir(src) {
     await fsProm.access(src, constants.F_OK);
     // console.log("File found");
     await fsProm.rm(src, { recursive: true });
-  } catch (err) {}
+  } catch (err) {
+    if (err.code === 'ENOENT')
+      console.error(
+        colors.cyan,
+        'The folder will now be created',
+        colors.white,
+      );
+  }
 }
 
 async function copyDir(src, dest) {
